@@ -23,8 +23,13 @@ describe Account do
     end
 
     it 'should not allow balance to go below zero' do
-      expect { subject.make_withdrawal(10) }.to raise_error("Requested amount exceeds available funds")
+      expect { subject.make_withdrawal(10.00) }.to raise_error("Requested amount exceeds available funds")
     end
   end
 
+  describe '#print_statement' do
+    it 'should display date, credit, debit, and balance headings' do
+      expect(subject.print_statement).to eq 'date || credit || debit || balance'
+    end
+  end
 end
