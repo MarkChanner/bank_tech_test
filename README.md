@@ -21,3 +21,23 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+
+## User Stories
+
+```
+As a client,
+So that I can make a deposit into my account,
+I'd like to deposit money.
+```
+
+```
+As a client,
+So that I can make a withdrawal from my account,
+I'd like to withdraw money.
+```
+
+```
+As a client
+So that I can see my balance and recent activity
+I'd like to be able to print my account statement
+```
