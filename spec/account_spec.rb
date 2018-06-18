@@ -14,4 +14,17 @@ describe Account do
       expect(subject.balance).to eq 10
     end
   end
+
+  describe '#make_withdrawal' do
+    it 'should deduct amount from balance' do
+      subject.make_deposit(100)
+      subject.make_withdrawal(90)
+      expect(subject.balance).to eq 10
+    end
+
+    it 'should not allow balance to go below zero' do
+      expect { subject.make_withdrawal(10) }.to raise_error("Requested amount exceeds available funds")
+    end
+
+  end
 end
