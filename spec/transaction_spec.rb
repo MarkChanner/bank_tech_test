@@ -3,6 +3,7 @@ require 'transaction'
 describe Transaction do
   let(:credit_transaction) { Transaction.new(1000.00, "", 1000.00) }
   let(:debit_transaction) { Transaction.new("", 1000.00, 1000.00) }
+  let(:invalid_transaction) { Transaction.new(1000.00, 1000.00, 1000.00) }
 
   it 'should return the date it was constructed' do
     time = Time.new
@@ -41,6 +42,10 @@ describe Transaction do
       date = time.strftime("%d/%m/%Y")
       expect(credit_transaction.display).to eq date + ' || 1000.00 || || 1000.00'
       expect(debit_transaction.display).to eq date + ' || || 1000.00 || 1000.00'
+    end
+
+    it 'should raise an error if neither credit or debit are empty strings' do
+      expect { invalid_transaction.display }.to raise_error('Either credit or debit should be an empty string')
     end
   end
 
