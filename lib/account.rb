@@ -18,7 +18,7 @@ class Account
   end
 
   def print_statement
-
+    @statement.display
   end
 
 end
