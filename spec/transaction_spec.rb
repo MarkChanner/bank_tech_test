@@ -35,4 +35,13 @@ describe Transaction do
     end
   end
 
+  describe '#display' do
+    it 'should show the transaction details' do
+      time = Time.new
+      date = time.strftime("%d/%m/%Y")
+      expect(credit_transaction.display).to eq date + ' || 1000.00 || || 1000.00'
+      expect(debit_transaction.display).to eq date + ' || || 1000.00 || 1000.00'
+    end
+  end
+
 end
