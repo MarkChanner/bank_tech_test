@@ -43,7 +43,7 @@ describe Account do
   end
 
   describe '#print_statement' do
-    it 'should display date, credit, debit, and balance headings' do
+    it 'should respond to print_statement' do
       expect(account).to respond_to(:print_statement)
     end
   end
