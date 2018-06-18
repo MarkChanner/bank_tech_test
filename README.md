@@ -16,10 +16,10 @@
 **Then** she would see
 
 ```
-date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
+date       || credit  || debit  || balance
+14/01/2012 ||         || 500.00 || 2500.00
+13/01/2012 || 2000.00 ||        || 3000.00
+10/01/2012 || 1000.00 ||        || 1000.00
 ```
 
 ## User Stories
@@ -39,5 +39,14 @@ I'd like to withdraw money.
 ```
 As a client
 So that I can see my balance and recent activity
-I'd like to be able to print my account statement
+I'd like to be able to print my statement
 ```
+
+## Functional Representation based on User Stories
+
+| Objects | Messages        |
+| ------- | --------------- |
+| Account |
+|         | make_deposit    |
+|         | make_withdrawal |
+|         | print_statement |
