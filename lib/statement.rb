@@ -11,6 +11,12 @@ class Statement
   end
 
   def display
-    'date || credit || debit || balance'
+    result = "date || credit || debit || balance"
+    @transactions.each do |t|
+      result += "\n"
+      result += t.display
+    end
+    result
   end
+
 end
