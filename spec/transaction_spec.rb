@@ -29,4 +29,10 @@ describe Transaction do
     end
   end
 
+  describe '#new_balance' do
+    it 'should return the balance' do
+      expect(credit_transaction.new_balance).to eq 1000.00
+    end
+  end
+
 end
