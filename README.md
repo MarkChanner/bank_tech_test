@@ -42,15 +42,6 @@ So that I can see my balance and recent activity
 I'd like to be able to print my statement
 ```
 
-## Functional Representation based on User Stories
-
-| Objects | Messages        |
-| ------- | --------------- |
-| Account |
-|         | make_deposit    |
-|         | make_withdrawal |
-|         | print_statement |
-
 ## Approach Used to Implement the Requirements
 
 Firstly, a Test-driven development approach was taken. There were two noticeable benefits to
