@@ -58,4 +58,9 @@ require './lib/account'
 require './lib/statement'
 require './lib/transaction_log'
 require './lib/transaction'
+
+account = Account.new
+account.make_deposit 100.00
+account.make_withdrawal 50.00
+account.print_statement
 ```
