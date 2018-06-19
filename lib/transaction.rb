@@ -14,7 +14,7 @@ class Transaction
     @new_balance = new_balance
   end
 
-  def display
+  def show
     if credit == ""
       return date + " || || %0.2f || %0.2f" % [debit.to_f, new_balance.to_f]
     elsif debit == ""

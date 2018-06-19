@@ -40,12 +40,12 @@ describe Transaction do
     it 'should show the transaction details' do
       time = Time.new
       date = time.strftime("%d/%m/%Y")
-      expect(credit_transaction.display).to eq date + ' || 1000.00 || || 1000.00'
-      expect(debit_transaction.display).to eq date + ' || || 1000.00 || 1000.00'
+      expect(credit_transaction.show).to eq date + ' || 1000.00 || || 1000.00'
+      expect(debit_transaction.show).to eq date + ' || || 1000.00 || 1000.00'
     end
 
     it 'should raise an error if neither credit or debit are empty strings' do
-      expect { invalid_transaction.display }.to raise_error('Either credit or debit should be an empty string')
+      expect { invalid_transaction.show }.to raise_error('Either credit or debit should be an empty string')
     end
   end
 
