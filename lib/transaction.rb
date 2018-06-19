@@ -2,10 +2,6 @@ class Transaction
 
   attr_reader :date, :credit, :debit, :new_balance
 
-  def self.build(credit, debit, new_balance)
-    Transaction.new(credit, debit, new_balance)
-  end
-
   def initialize(credit, debit, new_balance)
     time = Time.new
     @date = time.strftime("%d/%m/%Y")

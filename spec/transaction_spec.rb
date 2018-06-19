@@ -1,9 +1,9 @@
 require 'transaction'
 
 describe Transaction do
-  let(:credit_transaction) { Transaction.build(1000.00, "", 1000.00) }
-  let(:debit_transaction) { Transaction.build("", 1000.00, 1000.00) }
-  let(:invalid_transaction) { Transaction.build(1000.00, 1000.00, 1000.00) }
+  let(:credit_transaction) { Transaction.new(1000.00, "", 1000.00) }
+  let(:debit_transaction) { Transaction.new("", 1000.00, 1000.00) }
+  let(:invalid_transaction) { Transaction.new(1000.00, 1000.00, 1000.00) }
 
   it 'should return the date it was constructed' do
     time = Time.new
