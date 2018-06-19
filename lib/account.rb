@@ -1,5 +1,5 @@
 class Account
-  attr_reader :balance, :transaction_log
+  attr_reader :transaction_log, :statement, :balance
 
   def initialize(transaction_log_class = TransactionLog , statement_class = Statement)
     @transaction_log = transaction_log_class.new
@@ -19,7 +19,7 @@ class Account
   end
 
   def print_statement
-    @statement.display(transaction_log)
+    statement.display(transaction_log)
   end
 
 end
