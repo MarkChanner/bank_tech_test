@@ -9,12 +9,6 @@ describe Account do
 
   let(:account) { Account.new(transaction_log_class, statement_class) }
 
-  describe '#balance' do
-    it 'should return the balance' do
-      expect(account.balance).to eq 0
-    end
-  end
-
   describe '#make_deposit' do
     it 'should add deposited amount to balance' do
       account.make_deposit(10.00)
