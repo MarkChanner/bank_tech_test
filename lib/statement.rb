@@ -7,7 +7,7 @@ class Statement
   end
 
   def add_transaction(credit, debit, balance)
-    transactions.push(Transaction.new(credit, debit, balance))
+    transactions.push(Transaction.build(credit, debit, balance))
   end
 
   def display
