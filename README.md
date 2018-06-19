@@ -2,7 +2,7 @@
 
 ### Requirements
 
-* You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
+* You should be able to interact with your code via IRB. (You don't need to implement a command line interface that takes input from STDIN.)
 * Deposits, withdrawal.
 * Account statement (date, amount, balance) printing.
 * Data can be kept in memory (it doesn't need to be stored to a database or anything).
@@ -51,6 +51,15 @@ I'd like to be able to print my statement
 |         | make_withdrawal |
 |         | print_statement |
 
+## Approach Used to Implement the Requirements
+
+Firstly, a Test-driven development approach was taken. There were two noticeable benefits to
+doing this:
+
+1. Focusing on one test at a time helped the program to grow incrementally and enabled bugs to be caught early.
+
+2. Because each class was tested in isolation, the design of the program naturally improved with less coupling
+
 ## Running The Program from IRB
 
 ```
@@ -62,5 +71,5 @@ require './lib/transaction'
 account = Account.new
 account.make_deposit 100.00
 account.make_withdrawal 50.00
-account.print_statement
+puts account.print_statement
 ```
