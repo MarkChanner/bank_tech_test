@@ -50,3 +50,12 @@ I'd like to be able to print my statement
 |         | make_deposit    |
 |         | make_withdrawal |
 |         | print_statement |
+
+## Running The Program from IRB
+
+```
+require './lib/account'
+require './lib/statement'
+require './lib/transaction_log'
+require './lib/transaction'
+```
