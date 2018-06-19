@@ -1,8 +1,8 @@
 class Account
   attr_reader :balance
 
-  def initialize(statement)
-    @statement = statement
+  def initialize(statement_class = Statement)
+    @statement = statement_class.new
     @balance = 0
   end
 

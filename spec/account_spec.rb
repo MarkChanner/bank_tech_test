@@ -1,9 +1,9 @@
 require 'account'
 
 describe Account do
-
-  let(:statement) { spy("statement") }
-  let(:account) { Account.new(statement) }
+  let(:statement) { spy :statement, add_transaction: nil, display: nil }
+  let(:statement_class) { double :statement_class, new: statement }
+  let(:account) { Account.new(statement_class) }
 
   describe '#balance' do
     it 'should return the balance' do
