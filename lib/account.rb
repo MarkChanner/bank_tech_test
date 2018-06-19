@@ -13,13 +13,18 @@ class Account
   end
 
   def make_withdrawal(amount)
-    raise 'Requested amount exceeds available funds' if balance - amount < 0
+    raise 'Requested amount exceeds available funds' if insufficient_funds?(amount)
     @balance -= amount
     transaction_log.add_transaction("", amount, balance)
   end
 
   def print_statement
     statement.display(transaction_log)
+  end
+
+  private
+  def insufficient_funds?(amount)
+    balance - amount < 0
   end
 
 end
