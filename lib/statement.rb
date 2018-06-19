@@ -4,7 +4,7 @@ class Statement
     result = "date || credit || debit || balance"
     transaction_log.transactions.reverse.each do |transaction|
       result += "\n"
-      result += transaction.display
+      result += transaction.show
     end
     result
   end

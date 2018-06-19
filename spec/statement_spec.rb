@@ -2,8 +2,8 @@ require 'statement'
 
 describe Statement do
   date = Time.new.strftime("%d/%m/%Y")
-  let(:transaction01) { double :transaction01, display: (date + " || 1000.00 || || 1000.00") }
-  let(:transaction02) { double :transaction02, display: (date + " || || 1000.00 || 1000.00") }
+  let(:transaction01) { double :transaction01, show: (date + " || 1000.00 || || 1000.00") }
+  let(:transaction02) { double :transaction02, show: (date + " || || 1000.00 || 1000.00") }
   let(:transaction_log) { spy :transaction_log, add_transaction: nil, transactions: [transaction01, transaction02] }
   let(:empty_transaction_log) { spy :transaction_log, add_transaction: nil, transactions: [] }
 
