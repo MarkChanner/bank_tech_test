@@ -58,7 +58,12 @@ doing this:
 
 1. Focusing on one test at a time helped the program to grow incrementally and enabled bugs to be caught early.
 
-2. Because each class was tested in isolation, the design of the program naturally improved with less coupling
+2. Because each class was tested in isolation, the design of the program naturally improved and the degree of coupling was reduced.
+
+Regarding design, the different responsibilities of the program were extracted out into separate classes that are responsible for doing just one thing: the TransactionLog class stores details of client transactions, and the Statement class is responsible for displaying all transaction details. These two classes are managed by the Account
+class, which is the main interface for using the program; when methods are called on Account (see below), it delegates to
+TransactionLog and Statement. To reduce coupling between these three classes, TransactionLog and Summary are passed
+into Account via dependency injection.
 
 ## Running The Program from IRB
 
