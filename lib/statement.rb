@@ -12,7 +12,7 @@ class Statement
 
   def display
     result = "date || credit || debit || balance"
-    @transactions.reverse.each do |t|
+    transactions.reverse.each do |t|
       result += "\n"
       result += t.display
     end
