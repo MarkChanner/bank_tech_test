@@ -1,9 +1,13 @@
 require 'account'
 
 describe Account do
-  let(:statement) { spy :statement, add_transaction: nil, display: nil }
+  let(:statement) { spy :statement, display: nil }
   let(:statement_class) { double :statement_class, new: statement }
-  let(:account) { Account.new(statement_class) }
+
+  let(:transaction_log) { spy :transaction_log, add_transaction: nil }
+  let(:transaction_log_class) { double :transaction_log_class, new: transaction_log }
+
+  let(:account) { Account.new(transaction_log_class, statement_class) }
 
   describe '#balance' do
     it 'should return the balance' do
@@ -17,10 +21,10 @@ describe Account do
       expect(account.balance).to eq 10.00
     end
 
-    it 'should call #add_transaction on statement' do
+    it 'should call #add_transaction on transaction_log' do
       account.make_deposit(10.00)
       account.make_deposit(10.00)
-      expect(statement).to have_received(:add_transaction).twice
+      expect(transaction_log).to have_received(:add_transaction).twice
     end
   end
 
@@ -31,10 +35,10 @@ describe Account do
       expect(account.balance).to eq 10.00
     end
 
-    it 'should call #add_transaction on statement' do
+    it 'should call #add_transaction on transaction_log' do
       account.make_deposit(10.00)
       account.make_withdrawal(10.00)
-      expect(statement).to have_received(:add_transaction).twice
+      expect(transaction_log).to have_received(:add_transaction).twice
     end
 
     it 'should not allow balance to go below zero' do
@@ -43,8 +47,9 @@ describe Account do
   end
 
   describe '#print_statement' do
-    it 'should respond to print_statement' do
-      expect(account).to respond_to(:print_statement)
+    it 'should call display method on statement' do
+      account.print_statement
+      expect(statement).to have_received(:display)
     end
   end
 end

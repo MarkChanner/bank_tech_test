@@ -1,22 +1,11 @@
 class Statement
 
-  attr_reader :transactions
-
-  def initialize
-    @transactions = []
-  end
-
-  def add_transaction(credit, debit, balance)
-    transactions.push(Transaction.build(credit, debit, balance))
-  end
-
-  def display
+  def display(transaction_log)
     result = "date || credit || debit || balance"
-    transactions.reverse.each do |t|
+    transaction_log.transactions.reverse.each do |t|
       result += "\n"
       result += t.display
     end
     result
   end
-
 end
