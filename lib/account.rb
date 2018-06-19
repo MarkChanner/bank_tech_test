@@ -9,13 +9,13 @@ class Account
 
   def make_deposit(amount)
     @balance += amount
-    @transaction_log.add_transaction(amount, "", balance)
+    transaction_log.add_transaction(amount, "", balance)
   end
 
   def make_withdrawal(amount)
-    raise 'Requested amount exceeds available funds' if @balance - amount < 0
+    raise 'Requested amount exceeds available funds' if balance - amount < 0
     @balance -= amount
-    @transaction_log.add_transaction("", amount, balance)
+    transaction_log.add_transaction("", amount, balance)
   end
 
   def print_statement
